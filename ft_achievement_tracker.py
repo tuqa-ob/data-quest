@@ -21,8 +21,12 @@ ACHIEVEMENTS: List[str] = [
 
 
 def gen_player_achievements() -> Set[str]:
-    count: int = random.randint(3, len(ACHIEVEMENTS))
-    return set(random.sample(ACHIEVEMENTS, count))
+    try:
+        count: int = random.randint(3, len(ACHIEVEMENTS))
+        return set(random.sample(ACHIEVEMENTS, count))
+    except ValueError:
+        print("Error generating achievements")
+        return set()
 
 
 def format_set(s: Set[str]) -> str:
