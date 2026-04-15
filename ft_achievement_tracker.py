@@ -28,7 +28,7 @@ def gen_player_achievements() -> Set[str]:
 def format_set(s: Set[str]) -> str:
     if len(s) == 0:
         return "set()"
-    return "{" + ", ".join(f"’{item}’" for item in sorted(s)) + "}"
+    return "{" + ", ".join(f"’{item}’" for item in s + "}"
 
 
 def main() -> None:
